@@ -1,0 +1,40 @@
+.story {
+    &__pictures {
+        grid-column          : full-start/col-end 4;
+        display              : grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows   : repeat(6, 1fr);
+        background-image     : linear-gradient(rgba(198, 153, 99, .5), rgba(198, 153, 99, 0.2)),
+            url(../img/back.jpg);
+    }
+
+    &__img-1 {
+        width      : 100%;
+        grid-row   : 2/6;
+        grid-column: 2/6;
+        z-index    : 1;
+    }
+
+    &__img-2 {
+        width      : 115%;
+        grid-row   : 4/6;
+        grid-column: 4/7;
+        z-index    : 2;
+    }
+
+    &__content {
+        grid-column     : col-end 4/full-end;
+        background-color: #f9f7f6;
+        display         : grid;
+        align-content   : center;
+        justify-content : center;
+        justify-items   : start;
+        padding         : 6rem 8vw;
+        row-gap         : 1rem;
+    }
+
+    &__text {
+        font-size : 1.5rem;
+        font-style: italic;
+    }
+}

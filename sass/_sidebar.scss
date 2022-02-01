@@ -1,0 +1,5 @@
+.sidebar {
+    grid-column: sidebar-start/full-start;
+    grid-row: 1/-1;
+    background-color:$color-primary ;
+}
