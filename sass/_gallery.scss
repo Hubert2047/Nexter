@@ -7,6 +7,10 @@
     padding              : 1rem;
     background-color     : $color-grey-light-1;
 
+    @media only screen and (max-width:$bp-medium) {
+        grid-template-rows: repeat(7, 2.5vw);
+    }
+
     &__item {
 
         &-1 {

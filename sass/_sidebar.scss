@@ -1,11 +1,29 @@
 .sidebar {
-    grid-column     : sidebar-start/full-start;
-    grid-row        : 1/-1;
+    grid-column: sidebar-start/full-start;
+    grid-row   : 1/-1;
+
+    @media only screen and (max-width:$bp-big) {
+        grid-column    : 1/-1;
+        grid-row       : 1/2;
+        display        : flex;
+        justify-content: end;
+        position       : fixed;
+        top            : 0;
+        left           : 0;
+        width          : 100%;
+        z-index        : 999;
+    }
+
     background-color: $color-primary;
     text-align      : center;
 
     &__btn {
         height: 6rem;
+
+        @media only screen and (max-width:$bp-big) {
+            height: 6rem;
+            width : 6rem;
+        }
 
         &:hover &-icon {
             transform: scale(1.08) translateY(-.1rem);
@@ -22,15 +40,16 @@
             height          : 2px;
             width           : 50%;
             background-color: #fff;
+            text-align      : center;
             margin-top      : 3rem;
             position        : relative;
 
             &::before,
             &::after {
-                content : "";
-                height  : 2px;
-                width   : 100%;
-                position: absolute;
+                content         : "";
+                height          : 2px;
+                width           : 100%;
+                position        : absolute;
                 background-color: #fff;
             }
 

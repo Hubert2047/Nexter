@@ -10,6 +10,11 @@ $color-grey-light-2: #aaa;
 $color-grey-dark-1: #54483A;
 $color-grey-dark-2: #6D5D4B;
 
+$bp-bigest :75em; //1200px
+$bp-big    :62.5em; //1000px
+$bp-medium :56.25em; //900px
+$bp-small :37.5em; //600px
+
 // FONT VARIABLES
 $font-primary: 'Nunito',
 sans-serif;
@@ -31,12 +36,26 @@ html {
     color      : $color-grey-dark-2;
     font-weight: 300;
     line-height: 1.6;
+
+    @media only screen and (max-width:$bp-bigest) {
+        font-size: 50%; //8px
+    }
 }
 
 .container {
     display              : grid;
     grid-template-rows   : 80vh min-content 40vw repeat(3, min-content);
-    grid-template-columns: [sidebar-start]8rem [full-start]minmax(8rem, 1fr) [main-start]repeat(8, [col-start] minmax(min-content, 15rem)[col-end])[main-end] minmax(8rem, 1fr) [full-end];
+    grid-template-columns: [sidebar-start]8rem [full-start]minmax(8rem, 1fr) [main-start]repeat(8, [col-start] minmax(min-content, 15rem)[col-end]) [main-end] minmax(8rem, 1fr) [full-end];
+
+    @media only screen and (max-width:$bp-big) {
+        grid-template-rows   : 5rem 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns: [full-start]minmax(8rem, 1fr) [main-start]repeat(8, [col-start] minmax(min-content, 15rem)[col-end]) [main-end] minmax(8rem, 1fr) [full-end];
+    }
+
+    @media only screen and (max-width:$bp-medium) {
+        grid-template-rows   : 6rem 80vh repeat(8, min-content);
+        grid-template-columns: [full-start]minmax(8rem, 1fr) [main-start]repeat(8, [col-start] minmax(min-content, 15rem)[col-end]) [main-end] minmax(8rem, 1fr) [full-end];
+    }
 }
 
 .btn {

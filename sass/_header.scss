@@ -8,6 +8,10 @@
     grid-template-rows: 1fr repeat(2, min-content) 1fr min-content min-content;
     row-gap           : 1rem;
 
+    @media only screen and (max-width:$bp-medium) {
+        grid-column: 1/-1;
+    }
+
     &__logo {
         height      : 3rem;
         justify-self: center;
@@ -16,7 +20,6 @@
     &__btn {
         justify-self: start;
         align-self  : start;
-        margin-top  : 0;
     }
 
     &__seenon-text {
