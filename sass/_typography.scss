@@ -2,16 +2,25 @@
     font-family: "Josefin Sans", sans-serif;
     font-weight: 400;
 }
-.heading-2{
+
+.heading-1 {
+    font-size: 4.5rem;
+    @include font-style();
+}
+
+.heading-2 {
     font-size: 4rem;
     @include font-style();
 }
-.heading-3{
+
+.heading-3 {
     font-size: 2rem;
     @include font-style();
     color: $color-primary;
 }
-.heading-4{
+
+.heading-4 {
     font-size: 1.6rem;
     @include font-style();
+
 }

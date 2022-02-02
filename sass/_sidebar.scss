@@ -1,5 +1,49 @@
 .sidebar {
-    grid-column: sidebar-start/full-start;
-    grid-row: 1/-1;
-    background-color:$color-primary ;
+    grid-column     : sidebar-start/full-start;
+    grid-row        : 1/-1;
+    background-color: $color-primary;
+    text-align      : center;
+
+    &__btn {
+        height: 6rem;
+
+        &:hover &-icon {
+            transform: scale(1.08) translateY(-.1rem);
+
+        }
+
+        &:active &-icon {
+            transform: scale(1) translateY(0);
+        }
+
+        &-icon {
+            border          : none;
+            border-radius   : 0;
+            height          : 2px;
+            width           : 50%;
+            background-color: #fff;
+            margin-top      : 3rem;
+            position        : relative;
+
+            &::before,
+            &::after {
+                content : "";
+                height  : 2px;
+                width   : 100%;
+                position: absolute;
+                background-color: #fff;
+            }
+
+            &::after {
+                bottom: -1rem;
+                left  : 0;
+            }
+
+            &::before {
+                top : -1rem;
+                left: 0;
+            }
+        }
+
+    }
 }

@@ -35,16 +35,25 @@ html {
 
 .container {
     display              : grid;
-    grid-template-rows   : 80vh min-content 40vw repeat(3, 1fr);
-    grid-template-columns: [sidebar-start]10rem [full-start]minmax(8rem, 1fr) [main-start]repeat(8, [col-start] minmax(min-content, 15rem)[col-end])[main-end] minmax(8rem, 1fr) [full-end];
+    grid-template-rows   : 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [sidebar-start]8rem [full-start]minmax(8rem, 1fr) [main-start]repeat(8, [col-start] minmax(min-content, 15rem)[col-end])[main-end] minmax(8rem, 1fr) [full-end];
 }
 
 .btn {
     border          : none;
     border-radius   : 0;
-    background-color: #c69963;
+    background-color: $color-primary;
     color           : #fff;
     font-size       : 1.5rem;
     padding         : 1.8rem 3rem;
-    margin-top      : 2rem;
+
+    &:hover {
+        background-color: $color-primary-dark;
+    }
+
+    &:active {
+        background-color: $color-primary;
+        transform       : translateY(-.1rem);
+    }
+
 }
