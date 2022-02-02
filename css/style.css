@@ -119,7 +119,7 @@ html {
   display: grid;
   grid-template-rows: 1fr repeat(2, min-content) 1fr repeat(2, min-content);
   row-gap: 3rem; }
-  @media only screen and (max-width: 62.5em) {
+  @media only screen and (max-width: 56.25em) {
     .header {
       grid-column: 1/-1;
       margin-top: 6rem;
@@ -183,16 +183,24 @@ html {
       grid-template-rows: min-content 1fr;
       grid-template-columns: 1fr;
       align-items: center;
-      padding: 3rem; } }
+      padding: 2rem 2rem 4rem 2rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .realtors {
+      padding: 2rem; } }
   .realtors__heading {
     text-align: center; }
   .realtors__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, min-content));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, min-content));
     gap: 2rem; }
     @media only screen and (max-width: 56.25em) {
       .realtors__list {
-        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); } }
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); } }
+    @media only screen and (max-width: 37.5em) {
+      .realtors__list {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem; } }
   .realtors__item {
     display: grid;
     grid-template-columns: min-content max-content;
@@ -213,6 +221,14 @@ html {
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 6rem;
   margin: 15rem 0; }
+  @media only screen and (max-width: 75em) {
+    .features {
+      gap: 8rem;
+      margin: 10rem 0; } }
+  @media only screen and (max-width: 56.25em) {
+    .features {
+      gap: 6rem;
+      margin: 6rem 0; } }
   .features .feature {
     display: grid;
     grid-template-columns: min-content 1fr;
@@ -270,7 +286,8 @@ html {
   @media only screen and (max-width: 56.25em) {
     .story__content {
       grid-column: full-start/full-end;
-      grid-row: 5/6; } }
+      grid-row: 4/5;
+      padding: 5rem 8vw; } }
 
 .story__text {
   font-size: 1.5rem;
@@ -283,6 +300,18 @@ html {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 7rem; }
+  @media only screen and (max-width: 62.5em) {
+    .homes {
+      margin: 10rem 0; } }
+  @media only screen and (max-width: 56.25em) {
+    .homes {
+      margin: 8rem 0; } }
+  @media only screen and (max-width: 37.5em) {
+    .homes {
+      margin: 6rem 0; } }
+  @media only screen and (max-width: 25em) {
+    .homes {
+      margin: 4rem 0; } }
   .homes .home {
     background-color: #f9f7f6;
     display: grid;

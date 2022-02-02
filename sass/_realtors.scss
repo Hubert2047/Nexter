@@ -16,7 +16,11 @@
         grid-template-rows   : min-content 1fr;
         grid-template-columns: 1fr;
         align-items          : center;
-        padding              : 3rem;
+        padding              : 2rem 2rem 4rem 2rem;
+    }
+
+    @media only screen and (max-width:$bp-small) {
+        padding: 2rem;
     }
 
     &__heading {
@@ -25,11 +29,18 @@
 
     &__list {
         display              : grid;
-        grid-template-columns: repeat(auto-fit, minmax(25rem, min-content));
+        grid-template-columns: repeat(auto-fit, minmax(15rem, min-content));
         gap                  : 2rem;
 
         @media only screen and (max-width:$bp-medium) {
-            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+        }
+
+        @media only screen and (max-width:$bp-small) {
+            display       : flex;
+            flex-direction: column;
+            padding       : 2rem;
         }
     }
 
@@ -38,6 +49,7 @@
         grid-template-columns: min-content max-content;
         column-gap           : 1.5rem;
         justify-content      : center;
+
     }
 
     &__img {

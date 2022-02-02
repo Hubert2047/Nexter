@@ -41,12 +41,6 @@
 
     &__content {
         grid-column: col-end 4/full-end;
-
-        @media only screen and (max-width:$bp-medium) {
-            grid-column: full-start/full-end;
-            grid-row   : 5/6;
-        }
-
         background-color: #f9f7f6;
         display         : grid;
         align-content   : center;
@@ -54,6 +48,12 @@
         justify-items   : start;
         padding         : 6rem 8vw;
         row-gap         : 1rem;
+        
+        @media only screen and (max-width:$bp-medium) {
+            grid-column: full-start/full-end;
+            grid-row   : 4/5;
+            padding         : 5rem 8vw;
+        }
     }
 
     &__text {
