@@ -13,7 +13,9 @@ $color-grey-dark-2: #6D5D4B;
 $bp-bigest :75em; //1200px
 $bp-big    :62.5em; //1000px
 $bp-medium :56.25em; //900px
-$bp-small :37.5em; //600px
+$bp-small  :37.5em; //600px
+$bp-small  :37.5em; //600px
+$bp-smallest  :25em; //400px
 
 // FONT VARIABLES
 $font-primary: 'Nunito',
@@ -48,12 +50,11 @@ html {
     grid-template-columns: [sidebar-start]8rem [full-start]minmax(8rem, 1fr) [main-start]repeat(8, [col-start] minmax(min-content, 15rem)[col-end]) [main-end] minmax(8rem, 1fr) [full-end];
 
     @media only screen and (max-width:$bp-big) {
-        grid-template-rows   : 5rem 80vh min-content 40vw repeat(3, min-content);
         grid-template-columns: [full-start]minmax(8rem, 1fr) [main-start]repeat(8, [col-start] minmax(min-content, 15rem)[col-end]) [main-end] minmax(8rem, 1fr) [full-end];
     }
 
     @media only screen and (max-width:$bp-medium) {
-        grid-template-rows   : 6rem 80vh repeat(8, min-content);
+        grid-template-rows   : min-content repeat(8, min-content);
         grid-template-columns: [full-start]minmax(8rem, 1fr) [main-start]repeat(8, [col-start] minmax(min-content, 15rem)[col-end]) [main-end] minmax(8rem, 1fr) [full-end];
     }
 }
@@ -65,7 +66,9 @@ html {
     color           : #fff;
     font-size       : 1.5rem;
     padding         : 1.8rem 3rem;
-
+    @media only screen and (max-width:$bp-small) {
+        padding         : 1.2rem 2rem;
+    }
     &:hover {
         background-color: $color-primary-dark;
     }

@@ -5,11 +5,21 @@
     background-size   : cover;
     padding           : 4rem 8rem 8rem;
     display           : grid;
-    grid-template-rows: 1fr repeat(2, min-content) 1fr min-content min-content;
-    row-gap           : 1rem;
+    grid-template-rows: 1fr repeat(2, min-content) 1fr repeat(2, min-content);
+    row-gap           : 3rem;
 
-    @media only screen and (max-width:$bp-medium) {
+    @media only screen and (max-width:$bp-big) {
         grid-column: 1/-1;
+        margin-top : 6rem;
+        padding    : 4rem 6rem;
+    }
+
+    @media only screen and (max-width:$bp-small) {
+        padding: 2rem 2rem;
+    }
+
+    @media only screen and (max-width:$bp-smallest) {
+        row-gap: 2rem;
     }
 
     &__logo {
@@ -46,11 +56,22 @@
         justify-items        : center;
         align-items          : center;
         row-gap              : 2rem;
+
+        @media only screen and (max-width:$bp-smallest) {
+            display       : flex;
+            flex-direction: column;
+        }
+
     }
 
     &__seenon-logo {
         max-height: 2.5rem;
         max-width : 100%;
+        filter    : brightness(70%);
+
+        @media only screen and (max-width:$bp-small) {
+            max-height: 2rem;
+        }
     }
 
 }

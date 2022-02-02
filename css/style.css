@@ -22,11 +22,10 @@ html {
   grid-template-columns: [sidebar-start] 8rem [full-start] minmax(8rem, 1fr) [main-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [main-end] minmax(8rem, 1fr) [full-end]; }
   @media only screen and (max-width: 62.5em) {
     .container {
-      grid-template-rows: 5rem 80vh min-content 40vw repeat(3, min-content);
       grid-template-columns: [full-start] minmax(8rem, 1fr) [main-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [main-end] minmax(8rem, 1fr) [full-end]; } }
   @media only screen and (max-width: 56.25em) {
     .container {
-      grid-template-rows: 6rem 80vh repeat(8, min-content);
+      grid-template-rows: min-content repeat(8, min-content);
       grid-template-columns: [full-start] minmax(8rem, 1fr) [main-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [main-end] minmax(8rem, 1fr) [full-end]; } }
 
 .btn {
@@ -36,6 +35,9 @@ html {
   color: #fff;
   font-size: 1.5rem;
   padding: 1.8rem 3rem; }
+  @media only screen and (max-width: 37.5em) {
+    .btn {
+      padding: 1.2rem 2rem; } }
   .btn:hover {
     background-color: #B28451; }
   .btn:active {
@@ -70,8 +72,6 @@ html {
   text-align: center; }
   @media only screen and (max-width: 62.5em) {
     .sidebar {
-      grid-column: 1/-1;
-      grid-row: 1/2;
       display: flex;
       justify-content: end;
       position: fixed;
@@ -117,11 +117,19 @@ html {
   background-size: cover;
   padding: 4rem 8rem 8rem;
   display: grid;
-  grid-template-rows: 1fr repeat(2, min-content) 1fr min-content min-content;
-  row-gap: 1rem; }
-  @media only screen and (max-width: 56.25em) {
+  grid-template-rows: 1fr repeat(2, min-content) 1fr repeat(2, min-content);
+  row-gap: 3rem; }
+  @media only screen and (max-width: 62.5em) {
     .header {
-      grid-column: 1/-1; } }
+      grid-column: 1/-1;
+      margin-top: 6rem;
+      padding: 4rem 6rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      padding: 2rem 2rem; } }
+  @media only screen and (max-width: 25em) {
+    .header {
+      row-gap: 2rem; } }
   .header__logo {
     height: 3rem;
     justify-self: center; }
@@ -147,9 +155,17 @@ html {
     justify-items: center;
     align-items: center;
     row-gap: 2rem; }
+    @media only screen and (max-width: 25em) {
+      .header__seenon-logos {
+        display: flex;
+        flex-direction: column; } }
   .header__seenon-logo {
     max-height: 2.5rem;
-    max-width: 100%; }
+    max-width: 100%;
+    filter: brightness(70%); }
+    @media only screen and (max-width: 37.5em) {
+      .header__seenon-logo {
+        max-height: 2rem; } }
 
 .realtors {
   grid-column: col-end 6/full-end;
